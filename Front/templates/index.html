@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Image Similarity</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">Sube una imagen para encontrar imágenes similares</h1>
+      <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <input type="file" name="file" class="form-control-file">
+        </div>
+        <button type="submit" class="btn btn-primary">Subir</button>
+      </form>
+      {% if filename %}
+      <h2 class="mt-4">Imagen de consulta:</h2>
+      <img src="{{ url_for('static', filename='uploads/' ~ filename) }}" class="img-fluid mb-4" style="max-width: 300px;">
+      <h2>Imágenes similares:</h2>
+      <div class="row">
+        {% for label, img_filename in similar_labels %}
+        <div class="col-md-2 col-sm-4 col-6 mb-4 text-center">
+          <img src="{{ url_for('static', filename='uploads/' ~ img_filename) }}" class="img-fluid" style="max-width: 150px;">
+          <p>{{ label }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
