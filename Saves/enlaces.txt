@@ -1,0 +1,4 @@
+train_images.pkl
+https://epnecuador-my.sharepoint.com/:u:/g/personal/dylan_villarroel_epn_edu_ec/EQF-vs4kINBNhqhEldSawGsBOwYguDOurU77C12Rv9Qucg?e=wNAheG
+train_features.pkl
+https://epnecuador-my.sharepoint.com/:u:/g/personal/dylan_villarroel_epn_edu_ec/EYKHFMtC8ahChkJjMNnp2QkB--35GfKzzoSAQRBKt_wQqw?e=kqbvUc
